@@ -1,0 +1,131 @@
+
+.steam-theme {
+    position: relative;
+    overflow: hidden;
+}
+
+.steam-effect {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(0, 173, 238, 0.1) 0%, transparent 100%);
+    animation: steam 5s infinite;
+    z-index: 1;
+}
+
+.steam-link {
+    position: relative;
+}
+
+.steam-link::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: rgba(0, 173, 238, 0.1);
+    border-radius: 50%;
+    animation: steamPulse 3s infinite;
+    z-index: -1;
+}
+
+@keyframes steam {
+    0% { transform: translateY(0) scale(1); opacity: 0.3; }
+    100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+}
+
+@keyframes steamPulse {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.3; }
+    100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+.ps-theme {
+    background: linear-gradient(45deg, #003087, #001a4b);
+    position: relative;
+}
+
+.ps-lights {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, 
+        #003087, #0055ff, #ffffff, #0055ff, #003087);
+    animation: psLights 3s infinite;
+    top: 0;
+    left: 0;
+}
+
+.ps-link {
+    position: relative;
+}
+
+.ps-link::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid #0055ff;
+    border-radius: 50%;
+    animation: psBorder 4s infinite linear;
+    z-index: -1;
+}
+
+@keyframes psLights {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+@keyframes psBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.xbox-theme {
+    background: #107c10;
+    position: relative;
+}
+
+.xbox-circle {
+    width: 100px;
+    height: 100px;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: absolute;
+    animation: xboxPulse 2s infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.xbox-link {
+    position: relative;
+}
+
+.xbox-link::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid #107c10;
+    border-radius: 50%;
+    animation: xboxHover 2s infinite;
+}
+
+@keyframes xboxPulse {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.7; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.7; }
+}
+
+@keyframes xboxHover {
+    0% { transform: scale(0.9); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(0.9); opacity: 0.5; }
+}

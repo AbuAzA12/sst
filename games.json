@@ -1,0 +1,44 @@
+{
+    "steam": [
+        {
+            "id": 1,
+            "name": "Cyberpunk 2077",
+            "category": "rpg",
+            "price": 199,
+            "discount": 50,
+            "image": "https://via.placeholder.com/300x150?text=Cyberpunk+2077",
+            "end_date": "2023-12-31"
+        },
+        {
+            "id": 2,
+            "name": "Red Dead Redemption 2",
+            "category": "adventure",
+            "price": 179,
+            "discount": 40,
+            "image": "https://via.placeholder.com/300x150?text=Red+Dead+2",
+            "end_date": "2023-12-25"
+        }
+    ],
+    "playstation": [
+        {
+            "id": 3,
+            "name": "God of War: Ragnarok",
+            "category": "action",
+            "price": 249,
+            "discount": 30,
+            "image": "https://via.placeholder.com/300x150?text=God+of+War",
+            "end_date": "2024-01-15"
+        }
+    ],
+    "xbox": [
+        {
+            "id": 4,
+            "name": "Halo Infinite",
+            "category": "fps",
+            "price": 179,
+            "discount": 40,
+            "image": "https://via.placeholder.com/300x150?text=Halo+Infinite",
+            "end_date": "2023-12-20"
+        }
+    ]
+}

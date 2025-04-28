@@ -1,0 +1,116 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    line-height: 1.6;
+    padding: 20px;
+}
+.main-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+}
+.platforms-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.platform-link {
+    display: inline-block;
+    transition: transform 0.3s;
+    width: 80px;
+    height: 80px;
+}
+.platform-link:hover {
+    transform: scale(1.1);
+}
+.platform-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.featured-offers {
+    margin: 40px 0;
+}
+.featured-offers h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00adee;
+}
+.offers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 15px;
+}
+.game-card {
+    background: #16213e;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.game-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 2px solid #00adee;
+}
+.game-info {
+    padding: 15px;
+}
+.game-info h3 {
+    margin-bottom: 10px;
+    color: #00adee;
+}
+.price {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.original-price {
+    text-decoration: line-through;
+    color: #aaa;
+}
+.discounted-price {
+    font-weight: bold;
+    color: #4CAF50;
+}
+.discount-badge {
+    background: #ff4d4d;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+}
+@media (max-width: 768px) {
+    .platforms-nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .platform-link {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .offers-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}

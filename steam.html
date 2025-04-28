@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عروض Steam</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/platform-effects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="steam-theme">
+    <header class="platform-header">
+        <div class="platform-logo">
+            <img src="images/steam-logo.png" alt="Steam">
+        </div>
+        <h1>عروض Steam</h1>
+        
+        <div class="platform-filters">
+            <button class="filter-btn active" data-category="all">الكل</button>
+            <button class="filter-btn" data-category="action">أكشن</button>
+            <button class="filter-btn" data-category="rpg">RPG</button>
+            <button class="filter-btn" data-category="sports">رياضة</button>
+        </div>
+    </header>
+
+    <div class="platform-offers" id="platformOffers">
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/platform-effects.js"></script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('data/games.json')
+            .then(response => response.json())
+            .then(data => {
+                const steamGames = data.steam;
+                displayPlatformGames(steamGames);
+            });
+    });
+    
+    function displayPlatformGames(games) {
+        const container = document.getElementById('platformOffers');
+        container.innerHTML = '';
+        
+        games.forEach(game => {
+            const discountedPrice = game.price * (1 - game.discount / 100);
+            
+            const gameCard = document.createElement('div');
+            gameCard.className = 'game-card steam-game';
+            gameCard.innerHTML = `
+                <img src="${game.image}" alt="${game.name}">
+                <div class="game-info">
+                    <h3>${game.name}</h3>
+                    <div class="price">
+                        <span class="original-price">${game.price} ر.س</span>
+                        <span class="discounted-price">${discountedPrice.toFixed(2)} ر.س</span>
+                    </div>
+                    <span class="discount-badge">خصم ${game.discount}%</span>
+                    <div class="game-meta">
+                        <span class="game-category">${game.category}</span>
+                        <span class="offer-end">ينتهي في: ${game.end_date}</span>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(gameCard);
+        });
+    }
+    </script>
+</body>
+</html>
